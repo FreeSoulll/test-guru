@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 questions = [
-  { body: 'Who create Ruby?', tests_id: 1 },
-  { body: 'Who create HTML?', tests_id: 2 },
-  { body: 'Who create Java?', tests_id: 3 }
+  { body: 'Who create Ruby?', tests_id: Test.find_by(title: 'Ruby test') },
+  { body: 'Who create HTML?', tests_id: Test.find_by(title: 'HTML test') },
+  { body: 'Who create Java?', tests_id: Test.find_by(title: 'Java test') }
 ]
 
 categories = [
@@ -18,9 +18,9 @@ categories = [
   { title: 'Java' }
 ]
 tests = [
-  { title: 'Ruby test', level: 4, category_id: 1 },
-  { title: 'HTML test', level: 1, category_id: 2 },
-  { title: 'Java test', level: 3, category_id: 3 }
+  { title: 'Ruby test', level: 4, category_id: Category.find_by(title: 'Ruby') },
+  { title: 'HTML test', level: 1, category_id: Category.find_by(title: 'HTML') },
+  { title: 'Java test', level: 3, category_id: Category.find_by(title: 'Java') }
 ]
 users = [
   { name: 'Eric' },
@@ -29,12 +29,18 @@ users = [
 ]
 
 answers = [
-  { body: 'Yukihiro "Matz" Matsumoto', correct: true, question_id: 1 },
-  { body: 'Tim Berners-Lee', correct: true, question_id: 2 },
-  { body: 'Me', correct: false, question_id: 3 }
+  { body: 'Yukihiro "Matz" Matsumoto', correct: true, question_id: Question.find_by(body: 'Who create Ruby?') },
+  { body: 'Tim Berners-Lee', correct: true, question_id: Question.find_by(body: 'Who create HTML?') },
+  { body: 'Me', correct: false, question_id: Question.find_by(body: 'Who create Java?') }
 ]
+
 User.create(users)
 Category.create(categories)
 Test.create(tests)
 Question.create(questions)
 Answer.create(answers)
+
+test_result = TestResult.new
+test_result.user = User.find(1)
+test_result.test = Test.find(1)
+test_result.save

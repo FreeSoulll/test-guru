@@ -1,5 +1,6 @@
 class Test < ApplicationRecord
-  has_many :users
+  has_many :test_results
+  has_many :users, through: :test_results
   belongs_to :category
 
   def self.sorted_tests(category)
