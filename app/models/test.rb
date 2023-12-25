@@ -4,6 +4,6 @@ class Test < ApplicationRecord
   belongs_to :category
 
   def self.sorted_tests(category)
-    Test.order(title: :desc).includes(:category).where(category: { title: category }).pluck(:title)
+    Test.joins(:category).order(title: :desc).where('category.title': category).pluck(:title)
   end
 end
