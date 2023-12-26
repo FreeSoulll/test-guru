@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create(
+users = User.create(
   [
     { name: 'Eric' },
     { name: 'Stan' },
@@ -14,7 +14,7 @@ user = User.create(
   ]
 )
 
-category = Category.create(
+categories = Category.create(
   [
     { title: 'Ruby' },
     { title: 'HTML' },
@@ -22,27 +22,27 @@ category = Category.create(
   ]
 )
 
-test1 = Test.create(
+tests = Test.create(
   [
-    { title: 'Ruby test', level: 4, category_id: category[0].id },
-    { title: 'HTML test', level: 1, category_id: category[1].id },
-    { title: 'Java test', level: 3, category_id: category[2].id }
+    { title: 'Ruby test', level: 4, category_id: categories[0].id },
+    { title: 'HTML test', level: 1, category_id: categories[1].id },
+    { title: 'Java test', level: 3, category_id: categories[2].id }
   ]
 )
 
-question = Question.create(
+questions = Question.create(
   [
-    { body: 'Who create Ruby?', tests_id: test1[0].id },
-    { body: 'Who create HTML?', tests_id: test1[1].id },
-    { body: 'Who create Java?', tests_id: test1[2].id }
+    { body: 'Who create Ruby?', tests_id: tests[0].id },
+    { body: 'Who create HTML?', tests_id: tests[1].id },
+    { body: 'Who create Java?', tests_id: tests[2].id }
   ]
 )
 
 answer = Answer.create(
   [
-    { body: 'Yukihiro "Matz" Matsumoto', correct: true, question_id: question[0].id },
-    { body: 'Tim Berners-Lee', correct: true, question_id: question[1].id },
-    { body: 'Me', correct: false, question_id: question[2].id }
+    { body: 'Yukihiro "Matz" Matsumoto', correct: true, question_id: questions[0].id },
+    { body: 'Tim Berners-Lee', correct: true, question_id: questions[1].id },
+    { body: 'Me', correct: false, question_id: questions[2].id }
   ]
 )
 
