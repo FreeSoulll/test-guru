@@ -32,9 +32,9 @@ tests = Test.create(
 
 questions = Question.create(
   [
-    { body: 'Who create Ruby?', tests_id: tests[0].id },
-    { body: 'Who create HTML?', tests_id: tests[1].id },
-    { body: 'Who create Java?', tests_id: tests[2].id }
+    { body: 'Who create Ruby?', test_id: tests[0].id },
+    { body: 'Who create HTML?', test_id: tests[1].id },
+    { body: 'Who create Java?', test_id: tests[2].id }
   ]
 )
 
