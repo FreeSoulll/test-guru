@@ -66,4 +66,5 @@ ActiveRecord::Schema.define(version: 2023_12_29_175433) do
   add_foreign_key "test_results", "tests"
   add_foreign_key "test_results", "users"
   add_foreign_key "tests", "categories"
+  add_foreign_key "tests", "users", column: "creator_id"
 end

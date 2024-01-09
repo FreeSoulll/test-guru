@@ -24,9 +24,9 @@ categories = Category.create(
 
 tests = Test.create(
   [
-    { title: 'Ruby test', level: 4, category_id: categories[0].id },
-    { title: 'HTML test', level: 1, category_id: categories[1].id },
-    { title: 'Java test', level: 3, category_id: categories[2].id }
+    { title: 'Ruby test', level: 4, category_id: categories[0].id, creator_id: users[0].id },
+    { title: 'HTML test', level: 1, category_id: categories[1].id, creator_id: users[1].id },
+    { title: 'Java test', level: 3, category_id: categories[2].id, creator_id: users[2].id }
   ]
 )
 
