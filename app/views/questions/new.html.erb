@@ -1,5 +1,2 @@
-<h1><%= question_header(@test.title, 'create') %></h1>
+<%= render 'form', resource: @question %>
 
-<%= render 'form', resource: [@test, @question] %>
-
-<%= link_to 'Back', test_questions_path %>
