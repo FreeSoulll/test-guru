@@ -1,0 +1,18 @@
+<% action  = resource.persisted? ? resource :  [resource.test, resource]  %>
+
+<h1><%= question_header(resource) %></h1>
+
+<%= form_with model: action do |form| %>
+
+  <%= render 'shared/errors', resource: resource %>
+
+  <p>
+    <%= form.label :body %>
+
+    <%= form.text_field :body %>
+  </p>
+
+  <p><%= form.submit %></p>
+<% end %>
+
+<%= link_to 'Back', test_path(resource.test) %>
