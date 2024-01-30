@@ -3,8 +3,7 @@ class Answer < ApplicationRecord
 
   scope :corrects_answers, -> { where(correct: true) }
 
-  validates :body, :correct, :question_id, presence: true
-  validate :validate_number_answers
+  validates :body, :question_id, presence: true
 
   private
 
