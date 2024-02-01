@@ -1,6 +1,6 @@
 class Test < ApplicationRecord
-  has_many :test_results
-  has_many :users, through: :test_results
+  has_many :test_passages
+  has_many :users, through: :test_passages
   has_many :questions
   belongs_to :category
   belongs_to :creator, class_name: 'User'

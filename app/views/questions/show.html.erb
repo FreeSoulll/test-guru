@@ -1,10 +1,16 @@
 <span>Question body: <b><%= @question.body %></b></span></br>
 
+<h2>Answers</h2>
+
+<%= link_to 'New answer', new_question_answer_path(@question)%>
+
+<ol>
+  <%= render @question.answers %>
+</ol>
 
 <%= link_to 'Delete',
 question_path(@question),
 method: :delete,
 data: { confirm: 'Вы уверены?' } %>
-
 <%= link_to 'Edit', edit_question_path(@question) %>
 <%= link_to 'Back', test_path(@question.test) %>

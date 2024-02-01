@@ -42,11 +42,11 @@ answer = Answer.create(
   [
     { body: 'Yukihiro "Matz" Matsumoto', correct: true, question_id: questions[0].id },
     { body: 'Tim Berners-Lee', correct: true, question_id: questions[1].id },
-    { body: 'Me', correct: false, question_id: questions[2].id }
+    { body: 'Me', correct: true, question_id: questions[2].id }
   ]
 )
 
-test_result = TestResult.new
-test_result.user = User.find(1)
-test_result.test = Test.find(1)
-test_result.save
+test_passage = TestPassage.new
+test_passage.user = User.find(1)
+test_passage.test = Test.find(1)
+test_passage.save
