@@ -1,0 +1,22 @@
+<%= form_with url: sessions_path, local: true do |form| %>
+  <% if flash[:alert] %>
+    <%= render 'shared/flash', message: :alert %>
+  <%  end %>
+
+  <p>
+    <%= form.label :name %></br>
+    <%= form.text_field :name, id: :name %>
+  </p>
+
+  <p>
+    <%= form.label :email %></br>
+    <%= form.text_field :email, id: :email %>
+  </p>
+
+  <p>
+    <%= form.label :password %></br>
+    <%= form.password_field :password, id: :password %>
+  </p>
+
+  <p><%= form.submit %></p>
+<% end %>
