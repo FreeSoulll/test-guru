@@ -8,9 +8,9 @@
 
 users = User.create(
   [
-    { name: 'Eric' },
-    { name: 'Stan' },
-    { name: 'Kenny' }
+    { email: 'erick@mail.ru' },
+    { email: 'stan@mail.ru' },
+    { email: 'kenny@mail.ru' }
   ]
 )
 
@@ -47,6 +47,6 @@ answer = Answer.create(
 )
 
 test_passage = TestPassage.new
-test_passage.user = User.find(1)
-test_passage.test = Test.find(1)
+test_passage.user = User.first
+test_passage.test = Test.first
 test_passage.save

@@ -1,12 +1,7 @@
 <%= form_with url: sessions_path, local: true do |form| %>
-  <% if flash[:alert] %>
-    <%= render 'shared/flash', message: :alert %>
+  <% flash.each do |type, message| %>
+    <%= send("#{type}_flash", message) %>
   <%  end %>
-
-  <p>
-    <%= form.label :name %></br>
-    <%= form.text_field :name, id: :name %>
-  </p>
 
   <p>
     <%= form.label :email %></br>
