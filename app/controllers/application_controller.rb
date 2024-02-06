@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  helper FlashHelper
   before_action :authenticate_user!
   helper_method :current_user, :logged_in?
 

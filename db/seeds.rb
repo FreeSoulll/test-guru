@@ -8,9 +8,10 @@
 
 users = User.create(
   [
-    { email: 'erick@mail.ru' },
-    { email: 'stan@mail.ru' },
-    { email: 'kenny@mail.ru' }
+    { email: 'erick1@mail.ru', password: '123', password_confirmation: '123' },
+    { email: 'erick@mail.ru', password: '123', password_confirmation: '123' },
+    { email: 'stan@mail.ru', password_digest: '123', password_confirmation: '123' },
+    { email: 'kenny@mail.ru', password_digest: '123', password_confirmation: '123' }
   ]
 )
 
@@ -47,6 +48,6 @@ answer = Answer.create(
 )
 
 test_passage = TestPassage.new
-test_passage.user = User.first
-test_passage.test = Test.first
+test_passage.user = User.find(1)
+test_passage.test = Test.find(1)
 test_passage.save
