@@ -1,4 +1,4 @@
-<% action  = resource.persisted? ? resource :  [resource.test, resource]  %>
+<% action  = resource.persisted? ? [:admin, resource] :  [:admin, resource.test, resource]  %>
 
 <h1><%= question_header(resource) %></h1>
 
@@ -15,4 +15,4 @@
   <p><%= form.submit %></p>
 <% end %>
 
-<%= link_to 'Back', test_path(resource.test) %>
+<%= link_to 'Back', admin_test_path(resource.test) %>
