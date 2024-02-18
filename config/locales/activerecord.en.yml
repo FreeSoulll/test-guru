@@ -1,0 +1,21 @@
+en:
+  activerecord:
+    models:
+      test: "Test"
+      question: "Question"
+  
+    attributes:
+      test:
+        title: "Title"
+      user:
+        first_name: "First name"
+        last_name: "Last name"
+        email: "Email"
+        password: "Password"
+        remember_me: 'Remember me'
+        password_confirmation: "Password Confirmation"
+    
+    errors:
+      messages:
+        blank: "cant be blank"
+  

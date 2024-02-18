@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TestGuru</title>
+    <title><%= t('layouts.head.title') %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,13 +13,13 @@
   <body>
     <% if user_signed_in? %>
       <p class="nav user">
-        Welcome, <b><%= current_user.email %>  Guru |
-        <%= link_to 'Guru', root_path %></b>
-        <%= link_to 'Exit', destroy_user_session_path, method: :delete %>
+        <%= t('layouts.body.user', email: current_user.email).html_safe %>
+        <%= link_to t('links.guru'), root_path %></b>
+        <%= link_to t('links.exit'), destroy_user_session_path, method: :delete %>
       </p>
     <% else %>
-      <%= link_to 'Registration', new_user_registration_path%>
-      <%= link_to 'Login', user_session_path%>
+      <%= link_to t('links.registration'), new_user_registration_path%>
+      <%= link_to t('links.login'), user_session_path%>
     <% end %>
 
     <%= render 'shared/flash' %>
@@ -30,12 +30,12 @@
   <footer>
     <p><%= current_year %></p>
 
-    <%= github_url('Кружков Григорий', 'https://github.com/FreeSoulll/ruby-thinknetica') %>
+    <%= github_url(t('layouts.footer.author'), 'https://github.com/FreeSoulll/ruby-thinknetica') %>
 
     <p>
-      Текущий проект является учебным. Он представляет из себя генератор тестов.
+      <%= t('layouts.footer.description') %>
     </p>
 
-    <a href='http://thinknetica.com/' target="_blank">Учебный проект в онлайн-школе Thinknetica</a>
+    <a href='http://thinknetica.com/' target="_blank"><%= t('layouts.footer.link_to_thinknetica') %></a>
   </footer>
 </html>
