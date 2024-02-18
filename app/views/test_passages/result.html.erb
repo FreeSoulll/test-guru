@@ -1,14 +1,12 @@
 <% status = @test_passage.test_result[:status] == 'complited' ? 'green' : 'red' %>
 
-<h1><%= @test_passage.test.title %> was complited !</h1>
+<h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
 <p>
-  Percentage of correct answers - <span style="color: <%= status %>"><%= @test_passage.percentage_correct_answers %>%</span>
+  <%= t('.percentage') %> <span style="color: <%= status %>"><%= @test_passage.percentage_correct_answers %>%</span>
 </p>
 <p>
   <% status = @test_passage.test_result[:status] == 'complited' %>
-
-  <%= @test_passage.test_result[:message] %>
 </p>
 
-<%= link_to 'Back', tests_path %>
+<%= link_to t('links.back'), tests_path %>

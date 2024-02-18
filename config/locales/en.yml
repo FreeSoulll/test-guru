@@ -31,3 +31,116 @@
 
 en:
   hello: "Hello world"
+
+  helpers:
+    submit:
+      test:
+        create: "Create test"
+        update: "Update test"
+      question:
+        create: "Create question"
+        update: "Update question"
+      answer:
+        create: "Create answer"
+        update: "Update answer"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      question: 
+        body: 'Question'
+      answer:
+        body: 'Answers body'
+        correct: 'Correct'
+  
+  buttons:
+    start: "Start"
+    next: "Next"
+
+  links:
+    back: "Back"
+    show: "Show"
+    edit: "Edit"
+    delete: "Delete"
+    guru: "Guru"
+    exit: 'Exit'
+    registration: 'Registration'
+    login: 'Login'
+    new_test: 'New test'
+    new_question: 'New question'
+    new_answer: 'New answer'
+    confirm: "Are you shure?"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  layouts:
+    head:
+      title: "TestGuru"
+      admin_panel: "Admin Panel"
+    body:
+      user: "Welcome, <b>%{email}</b> Guru |"
+    footer:
+      author: 'The author is Grigory Kruzhkov'
+      description: 'The current project is an educational one. It is a test generator.'
+      link_to_thinknetica: 'Educational project at the Thinknetica online school'
+  
+  sessions:
+    new:
+      title: "Enter the Guru gates"
+
+  tests:
+    index:
+      header: "Tricky tests"
+      title: "Title"
+      level: "Level"
+      count: "Questions count"
+      actions: "Actions"
+      start: "Start"
+    new:
+      create: 'Create new test'
+    edit:
+      title: "Edit %{title} test"
+    show:
+      title: 'Title'
+      level: 'Level'
+      questions: 'Questions'
+
+  questions: 
+    question_header_update: "Update New %{title} Question"
+    question_header_create: "Create New %{title} Question"
+    show:
+      body: "Question body"
+      answers: "Answers"
+
+  answers:
+    new:
+      title: 'New answer'
+    show:
+      question: "Question"
+      answer: "Answer"
+      correct: 'Correct answer'
+    edit:
+      header: 'Edit answer'
+
+  test_passages:
+    result:
+      header: "The %{title} was Completed!"
+      percentage: "Percentage of correct answers - "
+    show:
+      title: "Pass the %{title} Test"
+
+  admin:
+    tests:
+      create:
+        success: "Test was successfully created."
+      index:
+        header: "Tricky tests"
+
+  test_mailer:
+    completed_test:
+      subject: "You just completed the Testguru test!"

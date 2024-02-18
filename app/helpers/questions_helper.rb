@@ -1,7 +1,7 @@
 module QuestionsHelper
   def question_header(question)
-    return "Update New #{question.test.title} Question" if question.persisted?
+    return t('questions.question_header_update', title: question.test.title) if question.persisted?
 
-    "Create New #{question.test.title} Question"
+    t('questions.question_header_create', title: question.test.title)
   end
 end

@@ -1,0 +1,117 @@
+ru:
+  hello: "Привет мир"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+      question:
+        create: "Создать вопрос"
+        update: "Обновить вопрос"
+      answer:
+        create: "Создать ответ"
+        update: "Обновить ответ"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+      question: 
+        body: 'Вопрос'
+      answer:
+        body: 'Ответ'
+        correct: 'Правильный'
+  
+  buttons:
+    start: "Начать"
+    next: "Следующий"
+
+  links:
+    back: "Назад"
+    show: "Показать"
+    edit: "Редактировать"
+    delete: "Удалить"
+    guru: "Guru"
+    exit: 'Выход'
+    registration: 'Регистрация'
+    login: 'Вход'
+    new_test: 'Новый тест'
+    new_question: 'Новый вопрос'
+    new_answer: 'Новый ответ'
+    confirm: "Вы уверены?"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено%{count} ошибки"
+
+  layouts:
+    head:
+      title: "TestGuru"
+      admin_panel: "Панель администратора"
+    body:
+      user: "Добро пожаловать, <b>%{email}</b> Guru |"
+    footer:
+      author: 'Автор - Кружков Григорий'
+      description: 'Текущий проект является учебным. Он представляет из себя генератор тестов.'
+      link_to_thinknetica: 'Учебный проект в онлайн-школе Thinknetica'
+
+  sessions:
+    new:
+      title: "Войти в Guru"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      count: "Количество вопросов"
+      actions: "Действия"
+      start: "Начать"
+    new:
+      create: 'Создать новый тест'
+    edit:
+      title: "Редакитровать %{title} тест"
+    show:
+      title: 'Название'
+      level: 'Уровень'
+      questions: 'Вопросы'
+  
+  questions:
+    question_header_update: "Обновить %{title} вопрос"
+    question_header_create: "Создать новый %{title} вопрос"
+    show:
+      body: "Вопрос"
+      answers: "Ответы"
+  
+  answers:
+    new:
+      title: 'Новый ответ'
+    show:
+      question: "Вопрос"
+      answer: "Ответ"
+      correct: 'Правильный ответ'
+    edit:
+      header: 'Редактировать ответ'
+
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен!"
+      percentage: "Процент правильных ответов - "
+    show:
+      title: "Проходим %{title} тест"
+
+  admin:
+    tests:
+      create:
+        success: "Тест был создан"
+      index:
+        header: "Доступные тесты"
+
+  test_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на Testguru!"

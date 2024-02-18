@@ -26,9 +26,9 @@ class TestPassage < ApplicationRecord
   end
 
   def test_result
-    return { status: 'not_complited', message: 'Test was not complited' } if percentage_correct_answers < PERCENT_SUCCESS
+    return { status: 'not_complited' } if percentage_correct_answers < PERCENT_SUCCESS
 
-    { status: 'complited', message: 'Test was complited' }
+    { status: 'complited' }
   end
 
   def current_index
@@ -42,7 +42,7 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    correct_answers.ids.sort == answer_ids&.map(&:to_i)&.sort
   end
 
   def correct_answers
