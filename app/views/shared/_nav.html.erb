@@ -1,18 +1,21 @@
-
 <nav class="navbar navbar-light bg-light">
  <div class="container-fluid">
-    <%= link_to t('links.guru'), root_path, class: 'navbar-brand fs-2 fw-bold' %>
+    <%= link_to t('links.guru'), root_path, class: 'navbar-brand' %>
 
     <span class="navbar-text">
       <% if user_signed_in? %>
-      <span class="nav-admin title fs-6"><%= t('layouts.head.admin_panel') %> <%= t('layouts.head.title') %></span>
         <p class="nav user gap-1">
+          <% if current_user.admin? %>
+            <%= link_to admin_tests_path do %>
+              <i class="fa-solid fa-user-tie"></i>
+            <% end %>
+          <% end %>
           <%= t('layouts.body.user', email: current_user.email).html_safe %>
           <%= link_to t('links.exit'), destroy_user_session_path, method: :delete %>
         </p>
       <% else %>
-        <%= link_to t('links.registration'), new_user_registration_path%>
-        <%= link_to t('links.login'), user_session_path%>
+        <%= link_to t('links.registration'), new_user_registration_path %>
+        <%= link_to t('links.login'), user_session_path %>
       <% end %>
     </span>
   </div>

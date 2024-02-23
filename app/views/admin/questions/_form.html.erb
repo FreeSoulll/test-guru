@@ -1,18 +1,23 @@
 <% action  = resource.persisted? ? [:admin, resource] :  [:admin, resource.test, resource]  %>
 
-<h1><%= question_header(resource) %></h1>
+<div class="row justify-content-center mt-3">
+  <h1 class="text-center mb-3"><%= question_header(resource) %></h1>
 
-<%= form_with model: action do |form| %>
+  <div class="card border-primary col col-md-4 p-3">
+    <%= form_with model: action do |form| %>
 
-  <%= render 'shared/errors', resource: resource %>
+      <%= render 'shared/errors', resource: resource %>
 
-  <p>
-    <%= form.label :body %>
+      <div class="mb-3">
+        <%= form.label :body, class: "form-label" %>
+        <%= form.text_field :body, class:"form-control" %>
+      </div>
 
-    <%= form.text_field :body %>
-  </p>
+      <p><%= form.submit class: "btn btn-primary" %></p>
+    <% end %>
 
-  <p><%= form.submit %></p>
-<% end %>
+    <%= link_to t('links.back'), admin_test_path(resource.test) %>
 
-<%= link_to t('links.back'), admin_test_path(resource.test) %>
+  </div>
+</div>
+

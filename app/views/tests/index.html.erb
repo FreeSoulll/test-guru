@@ -1,12 +1,16 @@
 <h1><%= t('tests.index.header') %></h1>
 
-<table>
-  <tr>
-    <th><%= t('tests.index.title') %></th>
-    <th><%= t('tests.index.level') %></th>
-    <th><%= t('tests.index.count') %></th>
-    <th colspan="4"><%= t('tests.index.actions') %></th>
-  </tr>
+<table class="table table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th><%= t('tests.index.title') %></th>
+      <th><%= t('tests.index.level') %></th>
+      <th><%= t('tests.index.count') %></th>
+      <th colspan="4"><%= t('tests.index.actions') %></th>
+    </tr>
+  </thead>
 
-  <%= render @tests %>
+  <tbody class="table-group-divider">
+    <%= render @tests %>
+  </tbody>
 </table>
