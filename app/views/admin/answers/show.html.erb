@@ -1,17 +1,21 @@
-<h1><%=t('answers.show.question')%></h1>
+<h1 class="text-center mb-3"><%=t('answers.show.question')%></h1>
 
-<p>
-  <%= @answer.question.body %>
-</p>
+<div class="row justify-content-center mt-3">
+  <div class="card border-primary col col-md-4 p-3">
+    <p>
+      <%= @answer.question.body %>
+    </p>
 
-<p>
-  <b><%=t('answers.show.answer')%>:</b>
-  <%= @answer.body %>
-</p>
+    <p>
+      <b><%=t('answers.show.answer')%>:</b>
+      <%= @answer.body %>
+    </p>
 
-<p>
-  <b><%=t('answers.show.correct')%>:</b>
-  <%= @answer.correct %>
-</p>
+    <p>
+      <b><%=t('answers.show.correct')%>:</b>
+      <%= @answer.correct %>
+    </p>
 
-<%= link_to t('links.back'), admin_question_path(@answer.question) %>
+    <%= link_to t('links.back'), admin_question_path(@answer.question) %>
+  </div>
+</div>

@@ -1,23 +1,25 @@
-<p>
-  <strong><%= t('tests.show.title') %>:</strong>
-  <%= @test.title %>
-</p>
+<div class="d-flex gap-2">
+  <p>
+    <strong><%= t('tests.show.title') %>:</strong>
+    <%= @test.title %>
+  </p>
 
-<p>
-  <strong><%= t('tests.show.level') %>:</strong>
-  <%= @test.level %>
-</p>
+  <p>
+    <strong><%= t('tests.show.level') %>:</strong>
+    <%= @test.level %>
+  </p>
+</div>
 
-<h2><%= t('tests.show.questions') %></h2>
+<h3 class="mb-3"><%= t('tests.show.questions') %></h3>
 
 <%= link_to t('links.new_question'), new_admin_test_question_path(@test) %>
 
-<ol>
-  <table>
-    <%= render partial: 'admin/questions/question', collection: @test.questions %>
-  </table>
-</ol>
+<table class="table table-striped mt-2">
+  <%= render partial: 'admin/questions/question', collection: @test.questions %>
+</table>
 
-<%= link_to t('links.edit'), edit_admin_test_path(@test) %>
-<%= link_to t('links.back'), admin_tests_path(@test) %>
+<div class="d-flex gap-2">
+  <%= link_to t('links.edit'), edit_admin_test_path(@test) %>
+  <%= link_to t('links.back'), admin_tests_path(@test) %>
+</div>
 

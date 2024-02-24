@@ -54,7 +54,8 @@ en:
         title: 'Recower password'
         submit: "Submit"
     login:
-      login: "Войти"
+      remember: 'Remember me'
+      login: "Login"
     registrations:
       title: "Become a Guru"
       sign_up: 'Registration'

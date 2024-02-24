@@ -1,16 +1,19 @@
-<span><%= t('questions.show.body') %>: <b><%= @question.body %></b></span></br>
 
-<h2><%= t('questions.show.answers') %></h2>
+<p class="d-flex"><%= t('questions.show.body') %>: <b><%= @question.body %></b></p>
+
+<h3 class="mb-3"><%= t('questions.show.answers') %></h3>
 
 <%= link_to t('links.new_answer'), new_admin_question_answer_path(@question.id) %>
 
-<ol>
+<table class="table table-striped mt-2">
   <%= render @question.answers %>
-</ol>
+</table>
 
-<%= link_to t('links.delete'),
-question_path(@question),
-method: :delete,
-data: { confirm: t('links.confirm') } %>
-<%= link_to t('links.edit'), edit_admin_question_path(@question) %>
-<%= link_to t('links.back'), admin_test_path(@question.test) %>
+<div class="d-flex gap-2">
+  <%= link_to t('links.delete'),
+  question_path(@question),
+  method: :delete,
+  data: { confirm: t('links.confirm') } %>
+  <%= link_to t('links.edit'), edit_admin_question_path(@question) %>
+  <%= link_to t('links.back'), admin_test_path(@question.test) %>
+</div>

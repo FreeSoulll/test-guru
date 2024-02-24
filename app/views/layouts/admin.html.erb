@@ -11,9 +11,29 @@
   </head>
 
   <body>
-    <%= render 'admin/nav' %> 
-    <%= render 'shared/flash' %> 
+    <%= render 'admin/nav' %>
+    <div class="container mt-3">
+      <%= render 'shared/flash' %>
+      <%= yield %>
+    </div>
 
-    <%= yield %>
+    <footer class="bg-dark text-light py-3">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <p>&copy; <%= current_year %></p>
+              <%= github_url(t('layouts.footer.author'), 'https://github.com/FreeSoulll/ruby-thinknetica') %>
+            </div>
+            <div class="col-md-6 text-md-end">
+              <a href='http://thinknetica.com/' target="_blank"><%= t('layouts.footer.link_to_thinknetica') %></a>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <p><%= t('layouts.footer.description') %></p>
+            </div>
+          </div>
+        </div>
+    </footer>
   </body>
 </html>
