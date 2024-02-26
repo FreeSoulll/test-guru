@@ -1,0 +1,14 @@
+<h1 class="mb-3"><%= t('gist.index.title') %></h1>
+
+<table class="table table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th><%= t('gist.index.user_email') %></th>
+      <th><%= t('gist.index.gist_url') %></th>
+      <th><%= t('gist.index.question') %></th> 
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <%= render @gists %>
+  </tbody>
+</table>

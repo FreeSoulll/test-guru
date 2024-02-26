@@ -133,6 +133,9 @@ en:
       percentage: "Percentage of correct answers - "
     show:
       title: "Pass the %{title} Test"
+    gist:
+      success: "Gist has been saved successfully!Link on gist - <a href='%{link}' target='_blank'>gist</a>"
+      failure: "An error occurred while saving gist"
 
   admin:
     tests:
@@ -144,3 +147,11 @@ en:
   test_mailer:
     completed_test:
       subject: "You just completed the Testguru test!"
+
+  gist:
+    index:
+      title: 'List created gists'
+      user_email: 'User email'
+      gist_url: 'Gist url'
+      question: 'Question'
+    description: "A question about %{title} from TestGuru"
