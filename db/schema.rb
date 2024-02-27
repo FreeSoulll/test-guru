@@ -28,12 +28,13 @@ ActiveRecord::Schema.define(version: 2024_02_25_133254) do
   end
 
   create_table "gists", force: :cascade do |t|
-    t.string "user", null: false
     t.string "url", null: false
+    t.integer "user_id", null: false
     t.integer "question_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["question_id"], name: "index_gists_on_question_id"
+    t.index ["user_id"], name: "index_gists_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -96,6 +97,7 @@ ActiveRecord::Schema.define(version: 2024_02_25_133254) do
 
   add_foreign_key "answers", "questions"
   add_foreign_key "gists", "questions"
+  add_foreign_key "gists", "users"
   add_foreign_key "questions", "tests"
   add_foreign_key "test_passages", "questions", column: "current_question_id"
   add_foreign_key "test_passages", "tests"

@@ -104,7 +104,10 @@ ru:
       percentage: "Процент правильных ответов - "
     show:
       title: "Проходим %{title} тест"
-    gist:
+
+  gists:
+    create:
+      title: 'Создать Gist'
       success: "Gist успешно сохранен!Ссылка на gist - <a href='%{link}' target='_blank'>gist</a>"
       failure: "Во время сохранения gist произошла ошибка"
 

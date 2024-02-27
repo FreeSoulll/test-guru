@@ -7,7 +7,9 @@ class GistQuestionService
   end
 
   def call
-    @client.create_gist(gist_params)
+    gist = @client.create_gist(gist_params)
+
+    succes? ? gist : nil
   end
 
   private
@@ -28,5 +30,10 @@ class GistQuestionService
     content = [@question.body]
     content += @question.answers.pluck(:body)
     content.join("\n")
+  end
+
+  def succes?
+    last_responce = @client.last_response
+    last_responce.status >= 200 && last_responce.status < 300
   end
 end

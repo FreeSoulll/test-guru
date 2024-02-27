@@ -18,8 +18,11 @@
         <% end %>
       </div>
 
-      <p><%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post %></p>
       <p><%= form.submit t('buttons.next'), class: "btn btn-primary"  %></p>
     <% end %>
+      <%= form_tag(gists_path) do %>
+        <%= hidden_field_tag :test_passage_id, @test_passage.id %>
+        <p> <%= submit_tag t('gists.create.title'), class: 'btn btn-warning' %></p>
+      <% end %>
   </div>
 </div>
