@@ -3,5 +3,5 @@
     <% key  = 'primary' %>
   <% end %>
 
-  <%= content_tag :p, message, {class: "flash alert alert-#{key}", role: 'alert'} %>
+  <%= content_tag :p, message.html_safe, {class: "flash alert alert-#{key}", role: 'alert'} %>
 <% end %>

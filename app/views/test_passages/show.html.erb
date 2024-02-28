@@ -18,11 +18,11 @@
         <% end %>
       </div>
 
-      <p> <%= form.submit t('buttons.next'), class: "btn btn-primary"  %> </p>
+      <p><%= form.submit t('buttons.next'), class: "btn btn-primary"  %></p>
     <% end %>
+      <%= form_tag(gists_path) do %>
+        <%= hidden_field_tag :test_passage_id, @test_passage.id %>
+        <p> <%= submit_tag t('gists.create.title'), class: 'btn btn-warning' %></p>
+      <% end %>
   </div>
-
-
-  
-  
 </div>

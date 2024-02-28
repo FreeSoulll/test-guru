@@ -134,6 +134,12 @@ en:
     show:
       title: "Pass the %{title} Test"
 
+  gists:
+    create:
+      title: 'Create Gist Question'
+      success: "Gist успешно сохранен!Ссылка на gist - <a href='%{link}' target='_blank'>gist</a>"
+      failure: "Во время сохранения gist произошла ошибка"
+
   admin:
     tests:
       create:
@@ -144,3 +150,11 @@ en:
   test_mailer:
     completed_test:
       subject: "You just completed the Testguru test!"
+
+  gist:
+    index:
+      title: 'List created gists'
+      user_email: 'User email'
+      gist_url: 'Gist url'
+      question: 'Question'
+    description: "A question about %{title} from TestGuru"
