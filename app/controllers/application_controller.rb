@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::Base
-  add_flash_types :success, :danger
+  add_flash_types :success, :danger, :alert
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
 
   def after_sign_in_path_for(user)
     return admin_tests_path if user.admin?
 
-    flash[:notice] = "Привет, #{user.first_name} #{user.last_name}!"
+    flash[:alert] = "Привет, #{user.email}!"
     tests_path
   end
 
