@@ -146,6 +146,8 @@ en:
         success: "Test was successfully created."
       index:
         header: "Tricky tests"
+      form_inline:
+        submit: "Ok"
 
   test_mailer:
     completed_test:
