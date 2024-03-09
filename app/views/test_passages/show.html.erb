@@ -3,6 +3,8 @@
     <%= t('test_passages.show.title', title: @test_passage.test.title) %> (<%= @test_passage.current_index %> / <%= @test_passage.test.questions.count %>) 
   </h1>
 
+  <%= render 'shared/progress_bar', count_questions: @test_passage.current_index, current_question: @test_passage.test.questions.count %>
+
   <h3 class="text-center mb-3">
     <%= @test_passage.current_question.body %>
   </h3>

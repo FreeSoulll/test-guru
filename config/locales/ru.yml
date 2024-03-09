@@ -117,6 +117,8 @@ ru:
         success: "Тест был создан"
       index:
         header: "Доступные тесты"
+      form_inline:
+        submit: "Ok"
 
   test_mailer:
     completed_test:
