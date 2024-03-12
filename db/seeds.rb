@@ -8,10 +8,10 @@
 
 users = User.create(
   [
-    { email: 'erick1@mail.ru', password: '123', password_confirmation: '123' },
-    { email: 'erick@mail.ru', password: '123', password_confirmation: '123' },
-    { email: 'stan@mail.ru', password_digest: '123', password_confirmation: '123' },
-    { email: 'kenny@mail.ru', password_digest: '123', password_confirmation: '123' }
+    { email: 'erick1@mail.ru', password: '123456', password_confirmation: '123456' },
+    { email: 'erick@mail.ru', password: '123456', password_confirmation: '123456' },
+    { email: 'stan@mail.ru', password: '123456', password_confirmation: '123456' },
+    { email: 'kenny@mail.ru', password: '123456', password_confirmation: '123456' }
   ]
 )
 
