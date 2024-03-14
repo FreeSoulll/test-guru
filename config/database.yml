@@ -26,3 +26,4 @@ production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
   #database: test_guru_production
+  
