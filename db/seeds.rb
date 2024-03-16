@@ -12,7 +12,7 @@ users = User.create(
     { email: 'erick@mail.ru', password: '123456', password_confirmation: '123456' },
     { email: 'stan@mail.ru', password: '123456', password_confirmation: '123456' },
     { email: 'kenny@mail.ru', password: '123456', password_confirmation: '123456' },
-    { email: 'admin@mail.ru', password: '123456', password_confirmation: '123456', type: 'Admin', first_name: 'Gregory', last_name: 'Kruzhkov'}
+    { email: 'admin@mail.ru', password: '123456', password_confirmation: '123456', type: 'Admin', first_name: 'Gregory', last_name: 'Kruzhkov', confirmed_at: Time.now}
   ]
 )
 
