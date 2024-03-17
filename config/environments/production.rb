@@ -16,7 +16,6 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
   config.action_mailer.default_url_options = { host: 'https://test-guru-b8dg.onrender.com/admin/tests' }
-  config.action_mailer.default_options = { from: ENV['MAILER_FROM'] }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     addresses: 'smtp.mail.com',
