@@ -26,7 +26,7 @@ Rails.application.configure do
     authentication: 'plain',
     enable_starttls_auto: true,
     open_timeout: 5,
-    read_timeout_: 5
+    read_timeout: 5
   }
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
