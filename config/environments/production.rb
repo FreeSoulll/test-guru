@@ -18,7 +18,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'https://test-guru-b8dg.onrender.com/admin/tests' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    addresses: 'smtp.mail.com',
+    addresses: 'smtp.mail.ru',
     port: 587,
     user_name: ENV['SMTP_USERNAME'],
     password: ENV['SMTP_PASSWORD'],
