@@ -8,10 +8,11 @@
 
 users = User.create(
   [
-    { email: 'erick1@mail.ru', password: '123456', password_confirmation: '123456' },
-    { email: 'erick@mail.ru', password: '123456', password_confirmation: '123456' },
-    { email: 'stan@mail.ru', password: '123456', password_confirmation: '123456' },
-    { email: 'kenny@mail.ru', password: '123456', password_confirmation: '123456' },
+    { email: 'erick1@mail.ru', first_name: 'Gregory', last_name: 'Kruzhkov', password: '123456', password_confirmation: '123456', confirmed_at: Time.now },
+    { email: 'erick@mail.ru', first_name: 'Gregory', last_name: 'Kruzhkov', password: '123456', password_confirmation: '123456', confirmed_at: Time.now },
+    { email: 'stan@mail.ru', first_name: 'Gregory', last_name: 'Kruzhkov', password: '123456', password_confirmation: '123456', confirmed_at: Time.now },
+    { email: 'kenny@mail.ru', first_name: 'Gregory', last_name: 'Kruzhkov', password: '123456', password_confirmation: '123456', confirmed_at: Time.now },
+    { email: 'admin@mail.ru', password: '123456', password_confirmation: '123456', type: 'Admin', first_name: 'Gregory', last_name: 'Kruzhkov', confirmed_at: Time.now}
     { email: 'admin@mail.ru', password: '123456', password_confirmation: '123456', type: 'Admin', first_name: 'Gregory', last_name: 'Kruzhkov', confirmed_at: Time.now}
   ]
 )
