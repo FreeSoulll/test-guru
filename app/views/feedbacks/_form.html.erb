@@ -1,0 +1,15 @@
+<%= form_with url: feedbacks_path, scope: :feedback do |form|%>
+  <%= render 'shared/errors', resource: @test %>
+
+  <div class="mb-3">
+    <%= form.label t('feedbacks.index.email'), class: "form-label" %>
+    <%= form.text_field :email, id: :email, class:"form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label t('feedbacks.index.content'), class: "form-label" %>
+    <%= form.text_area :content, id: :content, class:"form-control" %>
+  </div>
+
+  <p> <%= form.submit t('feedbacks.index.submit'), class: "btn btn-primary" %> </p>
+<% end %>

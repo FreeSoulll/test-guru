@@ -85,6 +85,7 @@ en:
     body:
       user: "Welcome, <b>%{email}</b> Guru |"
     footer:
+      feedback: 'Feedback'
       author: 'The author is Grigory Kruzhkov'
       description: 'The current project is an educational one. It is a test generator.'
       link_to_thinknetica: 'Educational project at the Thinknetica online school'
@@ -153,6 +154,16 @@ en:
     completed_test:
       subject: "You just completed the Testguru test!"
 
+  feedback:
+    index:
+      feedback: 'Feedback'
+      email: 'your email'
+      content: 'feedback text'
+      submit: 'Send'
+  
+  feedbacks_mailer:
+    feedback:
+      theme: "New message from %{email}"
   gist:
     index:
       title: 'List created gists'

@@ -56,6 +56,7 @@ ru:
     body:
       user: "Добро пожаловать, <b>%{email}</b> Guru |"
     footer:
+      feedback: 'Оставить отзыв'
       author: 'Автор - Кружков Григорий'
       description: 'Текущий проект является учебным. Он представляет из себя генератор тестов.'
       link_to_thinknetica: 'Учебный проект в онлайн-школе Thinknetica'
@@ -124,6 +125,18 @@ ru:
     completed_test:
       subject: "Вы успешно завершили тест на Testguru!"
   
+  feedbacks:
+    index:
+      feedback: 'Оставить отзыв'
+      email: 'Ваш email'
+      content: 'Текст отзыва'
+      submit: 'Отправить'
+    create:
+      success: 'Спасибо за Ваш отзыв!'
+
+  feedbacks_mailer:
+    feedback:
+      theme: "Новое сообщение от %{email}"
   gist:
     index:
       title: 'Список созданных gist'
