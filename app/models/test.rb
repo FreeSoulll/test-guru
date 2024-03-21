@@ -9,7 +9,6 @@ class Test < ApplicationRecord
   scope :medium_level, -> { where(level: 2..4) }
   scope :hard_level, -> { where(level: 5..Float::INFINITY) }
   scope :tests_by_category, ->(category) { Test.joins(:category).where('category.title': category) }
-  scope :with_not_empty_questions_and_answers, -> { joins(questions: :answers).distinct }
 
   validates :title, :level, :category_id, :creator_id, presence: true
   validates :level, numericality: { only_integer: true, greater_than: 0 }
@@ -17,5 +16,11 @@ class Test < ApplicationRecord
 
   def self.sorted_tests(category)
     tests_by_category(category).order(title: :desc).pluck(:title)
+  end
+
+  def self.validates_tests_for_user
+    joins(questions: :answers)
+      .group('tests.id, questions.id')
+      .having('COUNT(DISTINCT answers.id) >= 2')
   end
 end

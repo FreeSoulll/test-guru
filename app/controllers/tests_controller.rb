@@ -3,7 +3,7 @@ class TestsController < ApplicationController
   before_action :find_test, only: %i[start]
 
   def index
-    @tests = Test.with_not_empty_questions_and_answers
+    @tests = Test.validates_tests_for_user
   end
 
   def start
