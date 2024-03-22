@@ -16,5 +16,10 @@
     <%= form.collection_select :category_id, Category.all, :id, :title, { prompt: true }, { class: "form-select" } %>
   </div>
 
+  <div class="mb-3">
+    <%= form.check_box :publish, id: :publish, class: 'form-check-input' %>
+    <%= form.label :publish %>
+  </div>
+
   <p> <%= form.submit class: "btn btn-primary" %> </p>
 <% end %>
