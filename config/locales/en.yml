@@ -47,6 +47,7 @@ en:
       test:
         title: "Title"
         level: "Level"
+        publish: "Publish"
         category_id: "Category"
       question: 
         body: 'Question'
@@ -102,6 +103,9 @@ en:
       count: "Questions count"
       actions: "Actions"
       start: "Start"
+      positive: "Yes"
+      negative: "No"
+      publish: "Publish"
     new:
       create: 'Create new test'
     edit:

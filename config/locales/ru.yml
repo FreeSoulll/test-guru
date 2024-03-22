@@ -16,6 +16,7 @@ ru:
       test:
         title: "Название"
         level: "Уровень"
+        publish: "Опубликовать"
         category_id: "Категория"
       question: 
         body: 'Вопрос'
@@ -73,6 +74,9 @@ ru:
       count: "Количество вопросов"
       actions: "Действия"
       start: "Начать"
+      positive: "Да"
+      negative: "Нет"
+      publish: "Публикация"
     new:
       create: 'Создать новый тест'
     edit:

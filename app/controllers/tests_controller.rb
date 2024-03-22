@@ -3,7 +3,7 @@ class TestsController < ApplicationController
   before_action :find_test, only: %i[start]
 
   def index
-    @tests = Test.validates_tests_for_user
+    @tests = Test.published_tests
   end
 
   def start
