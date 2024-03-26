@@ -10,6 +10,7 @@
               <i class="fa-solid fa-user-tie"></i>
             <% end %>
           <% end %>
+          <%= link_to 'Награды юзера', badges_path %>
           <%= t('layouts.body.user', email: current_user.email).html_safe %>
           <%= link_to t('links.exit'), destroy_user_session_path, method: :delete %>
         </p>
