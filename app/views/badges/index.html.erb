@@ -1,0 +1,24 @@
+<h1><%= t('badges.index.title') %></h1>
+
+<%= render 'shared/errors', resource: @badge %>
+
+<table class="table table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th class='pointer'>
+        <%= t('badges.index.badge_title') %>
+      </th>
+      <th><%= t('badges.index.picture') %></th>
+    </tr>
+  </thead>
+
+  <tbody class="table-group-divider">
+    <% if @badges.present? %>
+      <%= render @badges %>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="d-flex gap-2">
+  <%= link_to t('links.back'), tests_path %>
+</div>
