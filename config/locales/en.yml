@@ -55,6 +55,7 @@ en:
         name: 'Name'
         image_url: 'Link on image url'
         badge_type: 'Badge type'
+        rule: 'The reward rule (you can specify the category number or test level)'
       question: 
         body: 'Question'
       answer:
@@ -184,9 +185,9 @@ en:
     description: "A question about %{title} from TestGuru"
 
   badges:
-    category_backend: 'All tests from the Backend category have been passed'
+    tests_from_category: 'All tests from the category have been passed'
     test_from_first_try: 'The test was passed on the first attempt'
-    test_from_four_level: 'All level 4 tests have been passed'
+    tests_from_level: 'All level tests have been passed'
     index:
       title: 'Badges'
       badge_title: 'Title'

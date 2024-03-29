@@ -8,10 +8,6 @@ class TestPassage < ApplicationRecord
 
   PERCENT_SUCCESS = 85
 
-  def giving_badges
-    [all_tests_backend, all_tests_from_level, test_passed_from_first_time].reject(&:!)
-  end
-
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
 
@@ -30,7 +26,7 @@ class TestPassage < ApplicationRecord
   end
 
   def test_result
-    return { status: 'not_complited' } if percentage_correct_answers < PERCENT_SUCCESS
+    return { status: 'not_complited' } if !success?
 
     { status: 'complited' }
   end
@@ -39,35 +35,11 @@ class TestPassage < ApplicationRecord
     test.questions.find_index(current_question) + 1
   end
 
+  def success?
+    percentage_correct_answers >= PERCENT_SUCCESS
+  end
+
   private
-
-  def check_tests(tests, category = nil)
-    return false if tests.count == 0
-
-    passed_tests = user.tests
-    last_record = user.tests.last
-    all_tests_passed = tests.all? { |test| passed_tests.include?(test) }
-
-    if all_tests_passed && passed_tests.records.count(last_record) <= 1 && percentage_correct_answers >= PERCENT_SUCCESS
-      return category ? category : true
-    end
-
-    false
-  end
-
-  def all_tests_backend
-    backend_tests = Test.joins(:category).where(categories: { title: 'Backend' })
-    check_tests(backend_tests, 'category_backend')
-  end
-
-  def all_tests_from_level
-    tests = Test.where(level: 4, publish: true)
-    check_tests(tests, 'test_from_four_level')
-  end
-
-  def test_passed_from_first_time
-    check_tests(user.tests, 'test_from_first_try')
-  end
 
   def before_validation_set_first_question
     self.current_question = test.questions.first if test.present?

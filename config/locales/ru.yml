@@ -24,6 +24,7 @@ ru:
         name: 'Название'
         image_url: 'Линк на картинку'
         badge_type: 'Тип награды'
+        rule: 'Правило получения награды(можно указать номер категории или уровень теста)'
       question: 
         body: 'Вопрос'
       answer:
@@ -157,9 +158,9 @@ ru:
     description: "Вопрос об %{title} от TestGuru"
   
   badges:
-    category_backend: 'Все тесты из категории  Backend пройдены'
+    tests_from_category: 'Все тесты из определенной категории пройдены'
     test_from_first_try: 'Тест пройден с первой попытки'
-    test_from_four_level: 'Пройдены все тесты 4 уровня'
+    tests_from_level: 'Пройдены все тесты определенного уровня'
     index:
       title: 'Награды'
       badge_title: 'Название'

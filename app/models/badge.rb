@@ -1,11 +1,11 @@
 class Badge < ApplicationRecord
-  has_many :user_badges
+  has_many :user_badges, dependent: :destroy
   has_many :users, through: :user_badges
 
   PRIVATE_RULTES_TEXT = {
-    category_backend: I18n.t('badges.category_backend'),
+    tests_from_category: I18n.t('badges.tests_from_category'),
     test_from_first_try: I18n.t('badges.test_from_first_try'),
-    test_from_four_level: I18n.t('badges.test_from_four_level')
+    tests_from_level: I18n.t('badges.tests_from_level')
   }.freeze
 
   def self.badge_rules
