@@ -6,34 +6,44 @@ class BadgeService
   end
 
   def call
-    Badge.select { |badge| send("#{badge.badge_type}", badge) }
+    Badge.select do |badge|
+      add_badge = send("#{badge.badge_type}?", badge)
+
+      @user.badges << badge if add_badge
+    end
   end
 
   private
 
-  def tests_from_category(badge)
-    return unless @test.category.title.downcase == badge.rule.downcase && @test_passage.success?
+  def tests_from_category?(badge)
+    return unless @test.category.title.downcase == badge.rule.downcase
 
-    category_tests = Test.tests_by_category(@test.category.title).where(publish: true)
-    passed_tests = @user.test_passages.joins(:test).where("tests.category_id": @test.category_id)
-    success_passed_tests_id = passed_tests.map { |value| value.success? ? value.test_id : nil }.compact
+    category_tests = Test.tests_by_category(@test.category.title).published_tests
+    passed_tests = @user.test_passages
+                        .joins(:test)
+                        .where(success: true, "tests.category_id": @test.category_id)
+                        .pluck(:test_id)
 
-    badge if category_tests.pluck(:id).sort == success_passed_tests_id.uniq.sort
+    category_tests.pluck(:id).sort == passed_tests.uniq.sort if unic_test?
   end
 
-  def tests_from_level(badge)
-    return unless @test.level == badge.rule.to_i && @test_passage.success?
+  def tests_from_level?(badge)
+    return unless @test.level == badge.rule.to_i
 
-    tests = Test.by_level(@test.level).where(publish: true)
-    passed_tests = @user.test_passages.joins(:test).where("tests.level": @test.level)
-    success_passed_tests_id = passed_tests.map { |value| value.success? ? value.test_id : nil }.compact
+    tests = Test.by_level(@test.level).published_tests
+    passed_tests = @user.test_passages
+                        .joins(:test)
+                        .where(success: true, "tests.level": @test.level)
+                        .pluck(:test_id)
 
-    badge if tests.pluck(:id).sort == success_passed_tests_id.uniq.sort
+    tests.pluck(:id).sort == passed_tests.uniq.sort if unic_test?
   end
 
-  def test_from_first_try(badge)
-    return unless @test_passage.success?
+  def test_from_first_try?(badge)
+    unic_test?
+  end
 
-    badge if @user.tests.where(id: @test.id).count == 1
+  def unic_test?
+    @user.tests.where(id: @test.id).count == 1
   end
 end
