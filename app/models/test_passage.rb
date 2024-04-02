@@ -18,6 +18,13 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
+  def set_success
+    return unless success?
+
+    self.success = true
+    save!
+  end
+
   def percentage_correct_answers
     correct_questions = self.correct_questions.to_f
     questions = self.test.questions.count.to_f
@@ -26,13 +33,17 @@ class TestPassage < ApplicationRecord
   end
 
   def test_result
-    return { status: 'not_complited' } if percentage_correct_answers < PERCENT_SUCCESS
+    return { status: 'not_complited' } unless success?
 
     { status: 'complited' }
   end
 
   def current_index
     test.questions.find_index(current_question) + 1
+  end
+
+  def success?
+    percentage_correct_answers >= PERCENT_SUCCESS
   end
 
   private
@@ -50,7 +61,7 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    test.questions.order(:id).where('id > ?', current_question.id).first
+    test.questions.order(:id).where('id > ?', current_question.id).first if current_question.present?
   end
 
   def set_next_question

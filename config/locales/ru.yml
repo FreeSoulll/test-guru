@@ -6,6 +6,8 @@ ru:
       test:
         create: "Создать тест"
         update: "Обновить тест"
+      badge:
+        update: 'Обновить Награду'
       question:
         create: "Создать вопрос"
         update: "Обновить вопрос"
@@ -18,6 +20,11 @@ ru:
         level: "Уровень"
         publish: "Опубликовать"
         category_id: "Категория"
+      badge:
+        name: 'Название'
+        image_url: 'Линк на картинку'
+        badge_type: 'Тип награды'
+        rule: 'Правило получения награды(можно указать номер категории или уровень теста)'
       question: 
         body: 'Вопрос'
       answer:
@@ -39,6 +46,7 @@ ru:
     login: 'Вход'
     new_test: 'Новый тест'
     new_question: 'Новый вопрос'
+    new_badge: 'Новая награда'
     new_answer: 'Новый ответ'
     confirm: "Вы уверены?"
 
@@ -148,3 +156,19 @@ ru:
       gist_url: 'Линк на gist'
       question: 'Вопрос'
     description: "Вопрос об %{title} от TestGuru"
+  
+  badges:
+    tests_from_category: 'Все тесты из определенной категории пройдены'
+    test_from_first_try: 'Тест пройден с первой попытки'
+    tests_from_level: 'Пройдены все тесты определенного уровня'
+    index:
+      title: 'Награды'
+      badge_title: 'Название'
+      picture: 'Картинка'
+      managment: 'Управление'
+    new:
+      title: 'Новая награда'
+    edit:
+      title: 'Редактировать награду'
+
+

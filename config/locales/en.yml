@@ -37,6 +37,8 @@ en:
       test:
         create: "Create test"
         update: "Update test"
+      badge:
+        update: 'Update badge'
       question:
         create: "Create question"
         update: "Update question"
@@ -49,6 +51,11 @@ en:
         level: "Level"
         publish: "Publish"
         category_id: "Category"
+      badge:
+        name: 'Name'
+        image_url: 'Link on image url'
+        badge_type: 'Badge type'
+        rule: 'The reward rule (you can specify the category number or test level)'
       question: 
         body: 'Question'
       answer:
@@ -71,6 +78,7 @@ en:
     new_test: 'New test'
     new_question: 'New question'
     new_answer: 'New answer'
+    new_badge: 'New badge'
     confirm: "Are you shure?"
 
   shared:
@@ -175,3 +183,17 @@ en:
       gist_url: 'Gist url'
       question: 'Question'
     description: "A question about %{title} from TestGuru"
+
+  badges:
+    tests_from_category: 'All tests from the category have been passed'
+    test_from_first_try: 'The test was passed on the first attempt'
+    tests_from_level: 'All level tests have been passed'
+    index:
+      title: 'Badges'
+      badge_title: 'Title'
+      picture: 'Image'
+      managment: 'Manage'
+    new:
+      title: 'New badge'
+    edit:
+      title: 'Edit badge'

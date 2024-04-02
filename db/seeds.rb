@@ -21,7 +21,8 @@ categories = Category.create(
   [
     { title: 'Ruby' },
     { title: 'HTML' },
-    { title: 'Java' }
+    { title: 'Java' },
+    { title: 'Backend' }
   ]
 )
 
