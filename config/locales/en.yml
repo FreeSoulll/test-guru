@@ -51,6 +51,8 @@ en:
         level: "Level"
         publish: "Publish"
         category_id: "Category"
+        timer: "Set a timer in the test?"
+        timer_label: "Time in minutes"
       badge:
         name: 'Name'
         image_url: 'Link on image url'
@@ -141,6 +143,7 @@ en:
       header: 'Edit answer'
 
   test_passages:
+    time: "There's still time left"
     result:
       header: "The %{title} was Completed!"
       percentage: "Percentage of correct answers - "

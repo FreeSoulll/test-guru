@@ -17,6 +17,16 @@
   </div>
 
   <div class="mb-3">
+    <%= form.check_box :publish, id: :publish, class: 'form-check-input js-show-timer' %>
+    <%= form.label :timer %>
+  </div>
+
+  <div class="mb-3 js-timer-block" style='display: none;'>
+    <%= form.label :timer_label, class: "form-label" %>
+    <%= form.text_field :timer, id: :test_timer, class:"form-control" %>
+  </div>
+
+  <div class="mb-3">
     <%= form.check_box :publish, id: :publish, class: 'form-check-input' %>
     <%= form.label :publish %>
   </div>

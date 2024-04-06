@@ -10,7 +10,13 @@
   </h3>
 
   <div class="card border-primary col col-md-4 p-3">
-    <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+    <%= form_with url: test_passage_path(@test_passage), local: true, method: :put, html: { data: { result_url: result_test_passage_path(@test_passage) } } do |form| %>
+
+      <div class="timer-block">
+        <span> <%= t('test_passages.time')%> </span>
+        <div id="timerDisplay">00:00:00</div>
+        <%= form.text_field :timer, id: :timer, class: " js-data-input" %>
+      </div>
       <div class="mb-3">
         <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false  do |b| %>
           <p>

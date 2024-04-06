@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   add_flash_types :success, :danger, :alert
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
+  before_action :delete_timer_cookie
 
   def after_sign_in_path_for(user)
     return admin_tests_path if user.admin?
@@ -15,6 +16,10 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def delete_timer_cookie
+    cookies.delete(:timer) unless params[:controller] == 'test_passages'
+  end
 
   def set_locale
     I18n.locale = I18n.locale_available?(params[:lang])? params[:lang] : I18n.default_locale

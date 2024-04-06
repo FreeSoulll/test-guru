@@ -5,3 +5,13 @@
 .hide {
   display: none !important;
 }
+
+#timer {
+  display: none !important;
+}
+
+.timer-block {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
