@@ -8,9 +8,8 @@ class TestPassage < ApplicationRecord
 
   PERCENT_SUCCESS = 85
 
-  def accept!(answer_ids, time = nil)
+  def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
-    self.time_left = time if time.present?
     save!
   end
 
@@ -44,6 +43,10 @@ class TestPassage < ApplicationRecord
 
   def success?
     percentage_correct_answers >= PERCENT_SUCCESS
+  end
+
+  def time_left(test_passage)
+    test_passage.test.timer - ((Time.now - test_passage.created_at).to_i / 60.0) if test_passage.test&.timer&.positive?
   end
 
   private

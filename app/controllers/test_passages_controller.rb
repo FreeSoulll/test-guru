@@ -2,16 +2,12 @@ class TestPassagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_test_passage, only: %i[show update result]
 
-  def show
-    @test_passage.time_left = @test_passage.time_left || @test_passage.test.timer
-  end
+  def show; end
 
   def result; end
 
   def update
-    decode_time = params[:time_left] ? decode_time_to_minutes(params[:time_left]) : nil
-
-    @test_passage.accept!(params[:answer_ids], decode_time)
+    @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.complited?
       @test_passage.set_success
@@ -19,7 +15,7 @@ class TestPassagesController < ApplicationController
 
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
-    elsif decode_time <= 0
+    elsif !@test_passage
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
