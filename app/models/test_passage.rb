@@ -45,8 +45,8 @@ class TestPassage < ApplicationRecord
     percentage_correct_answers >= PERCENT_SUCCESS
   end
 
-  def time_left(test_passage)
-    test_passage.test.timer - ((Time.now - test_passage.created_at).to_i / 60.0) if test_passage.test&.timer&.positive?
+  def time_left
+    self.test.timer - ((Time.now - created_at).to_i / 60.0) if self.test&.timer&.positive?
   end
 
   private

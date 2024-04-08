@@ -5,15 +5,16 @@ document.addEventListener('turbolinks:load', function() {
   const timerInput = document.querySelector('.js-data-input');
   const timeLeft = document.querySelector('[data-time-left]').dataset.timeLeft;
   const endTime = new Date().getTime() + (timeLeft * 60 * 1000);
-  const resultLink = document.querySelector('[data-result-url]');
+  let reload = false;
   
   function updateTimer() {
-    var currentTime = new Date().getTime();
-    var timeLeft = endTime - currentTime;
+    const currentTime = new Date().getTime();
+    const timeLeft = endTime - currentTime;
 
     
-    if (timeLeft <= 0 && resultLink) {
-      window.location.href = resultLink.dataset.resultUrl;
+    if (timeLeft <= 0 && !reload) {
+      reload = true;
+      window.location.reload();
       return;
     }
     
@@ -31,5 +32,7 @@ document.addEventListener('turbolinks:load', function() {
   }
   
   // Обновляем таймер каждую секунду
-  const timerInterval = setInterval(updateTimer, 1000);
+  const timerInterval = setInterval(() => { 
+    updateTimer();
+  }, 1000);
 });

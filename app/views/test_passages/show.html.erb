@@ -10,7 +10,7 @@
   </h3>
 
   <div class="card border-primary col col-md-4 p-3">
-    <%= form_with url: test_passage_path(@test_passage), local: true, method: :put, html: { data: { result_url: result_test_passage_path(@test_passage), time_left: @test_passage.time_left(@test_passage) } } do |form| %>
+    <%= form_with url: test_passage_path(@test_passage), local: true, method: :put, html: { data: { time_left: @test_passage.time_left } } do |form| %>
 
       <% if @test_passage.test.timer %>
         <div class="timer-block">
