@@ -20,6 +20,8 @@ ru:
         level: "Уровень"
         publish: "Опубликовать"
         category_id: "Категория"
+        timer: "Задать таймер в тесте?"
+        timer_label: "Время задается в минутах"
       badge:
         name: 'Название'
         image_url: 'Линк на картинку'
@@ -112,6 +114,7 @@ ru:
       header: 'Редактировать ответ'
 
   test_passages:
+    time: "Осталось времени"
     result:
       header: "Тест %{title} успешно завершен!"
       percentage: "Процент правильных ответов - "
